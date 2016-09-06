@@ -1,0 +1,13 @@
+*{
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+}
+body {
+	width: 80%;
+	margin: 0 auto;
+}
+header {
+	background-color: gray;
+	border-radius: 15px 15px 0 0 ;
+}
