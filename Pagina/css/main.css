@@ -10,6 +10,8 @@ body {
 header {
 	background-color: gray;
 	border-radius: 15px 15px 0 0 ;
+	padding-left: 20px;
+	color: white;
 }
 .menu {
 	margin-top: 5px;
@@ -22,8 +24,26 @@ header {
 .menu ul li {
 	display: inline-block;
 	float: left;
-	margin-left: 10px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 .menu ul li a {
 	text-decoration: none;
+	color: white;
+}
+.tabla {
+	display: table;
+	-webkit-column-count: 3; /*Chrome, Safari, Opera?????*/
+	-moz-column-count: 3; /*Firefox?????*/
+	column-count: 3; /*cantidad de columnas*/
+	column-gap: 30px; /*espacio entre columnas*/
+	-webkit-column-gap: 30px; /*Firefox?????*/
+}
+.productos {
+	display: table-cell; 
+	width: 80%; 
+}
+
+.productos article {
+	display: inline-table;
 }
