@@ -52,5 +52,12 @@ footer {
 	border-radius: 0 0 10px 10px;
 	height: 40px;
 	margin-top: 20px;
+	color: white;
+
+}
+footer p {
+	margin-left: 30px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 
 }
