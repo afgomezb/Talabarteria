@@ -1,0 +1,25 @@
+<header>
+	<nav class="be-red white large-padding">
+    	<ul class="no-list row center-xs middle-xs">
+    		<li class="col-sm">
+    			<%= link_to "INICIO", root_path %>
+    		</li>
+    		<li class="col-sm">
+    			<%= link_to "PRODUCTOS", products_path %>
+    		</li>
+    		<li class="col-sm">
+    			<%= link_to "INDICADORES", root_path %>
+    		</li>
+    		<li class="col-sm">
+    			<%= link_to "CONTACTENOS", root_path %>
+    		</li>
+        <% if user_signed_in? %>
+        <li class="col-sm">
+          <%= link_to "CERRAR SESIÓN", destroy_user_session_path , method: :delete %>
+        </li>
+        <%else%>
+        	<%= link_to "INICIAR SESIÓN", new_user_session_path %>
+        <%end%>
+    	</ul>
+    </nav>
+</header>
