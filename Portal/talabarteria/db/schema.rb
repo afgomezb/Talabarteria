@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20161109041705) do
     t.string   "photo2_file_name"
     t.string   "photo2_content_type"
     t.integer  "photo2_file_size"
-    t.datetime "photo2_updated_at" 
+    t.datetime "photo2_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
