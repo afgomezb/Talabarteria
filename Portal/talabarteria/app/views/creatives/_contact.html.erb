@@ -1,0 +1,41 @@
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Contáctenos!</h2>
+                <hr class="primary">
+                <p>Danos una llamada o envianos un correo electrónico y nos pondremos en contacto con usted tan pronto sea posible!</p>
+            </div>
+
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                
+                <p>
+                    Visítanos<br>
+                    Carrera 4 # 21 - 20 -<br>
+                    Montenegro, Quindío <br><br>
+                    Barrio la pista carrera <br>
+                    4 # 21 - 22 -<br>
+                    Montenegro, Quindío 
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                <p>Llamános<br>
+                    311 324 5363</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p>Escribenos <br><a href="mailto:your-email@your-domain.com">hugoramirezvelez@gmail.com</a></p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <% if user_signed_in? %>
+                    <%= link_to "MENSAJES", messages_path, class: "btn btn-primary btn-xl page-scroll" %>
+                <%else%>
+                  <%= link_to "ENVIAR MENSAJE", new_message_path, class: "btn btn-primary btn-xl page-scroll" %>
+                <%end%>
+            </div>  
+        </div>
+    </div>
+</section>
+

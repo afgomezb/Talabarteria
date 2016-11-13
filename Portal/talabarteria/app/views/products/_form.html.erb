@@ -1,42 +1,69 @@
-<%= form_for(product) do |f| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div style="width: 80%;margin: 0 auto;">
+  <%= form_for(product) do |f| %>
+    <% if product.errors.any? %>
+      <div class="field"> 
+        <h2>Error</h2>
+        <ul>
+        <% product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+      <%= f.text_field :name,placeholder: "Nombre", class: "forma" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :price, placeholder: "Precio", class: "forma" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, placeholder: "Escribe aqui una descripción", style:"height:150px", class: "forma" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :warranty, placeholder: "Garantía", class: "forma" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :type_leather, placeholder: "Tipo de cuero", class: "forma" %>
+    </div>
+    <div class="field">
+      <table>
+        <tr>
+          <td>
+            <%= f.label 'Imagen principal: ', style: "padding-right: 15px;" %>
+          </td>
+          <td>
+            <%= f.file_field :cover %>
+          </td>
+        </tr>
+      </table>
+    </div> 
+    <div class="field">
+      <table>
+        <tr>
+          <td>
+            <%= f.label 'Imagen: ', style: "padding-right: 15px;" %>
+          </td>
+          <td>
+            <%= f.file_field :photo1 %>
+          </td>
+        </tr>
+      </table>
+    </div>  
+    <div class="field">
+      <table>
+        <tr>
+          <td>
+            <%= f.label 'Imagen: ', style: "padding-right: 15px;" %>
+          </td>
+          <td>
+            <%= f.file_field :photo2 %>
+          </td>
+        </tr>
+      </table>
+    </div> 
+    <div class="actions center-xs">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :warranty %>
-    <%= f.text_field :warranty %>
-  </div>
-
-  <div class="field">
-    <%= f.label :type_leather %>
-    <%= f.text_field :type_leather %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

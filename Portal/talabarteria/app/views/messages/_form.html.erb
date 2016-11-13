@@ -1,0 +1,30 @@
+<div style="width: 80%;margin: 0 auto;">
+<%= form_for(message) do |f| %> 
+  <% if message.errors.any? %>
+    <div class="field"> 
+      <h2>Error</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: "Escribe tu nombre", class: "forma" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, placeholder: "Escribe tu correo electrónico", class: "forma" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :menssage, placeholder: "Escribe aquí tu mensaje", class: "forma" %>
+  </div>
+
+  <div class="actions center-xs">
+    <%= f.submit %>
+  </div>
+<% end %>

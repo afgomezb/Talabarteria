@@ -1,0 +1,49 @@
+<section class="no-padding" id="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Productos</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                 <% if user_signed_in? %>
+                    <%= link_to 'Nuevo Producto', new_product_path, class: "btn btn-primary btn-xl page-scroll" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+            <% @products.each do |product| %>
+
+            <div class="col-lg-12 ", style="margin-top: 10px;margin-bottom: : 10px; ">
+                <a href="#products" class="portfolio-box">
+                    <%= image_tag product.cover.url(:mini), class: "img-responsive", style: "margin: 0 auto;", alt: "" %>
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                <%= product.name %>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="row">
+                    <div class="col-lg-12 text-center", style="margin-top: 10px;">
+                        <%= link_to 'Ver', product , class: "btn btn-primary btn-xl page-scroll"%>
+                        <% if user_signed_in? %>
+                            <%= link_to 'Eliminar', product, method: :delete, class: "btn btn-primary btn-xl page-scroll",data: { confirm: '¿Estás Seguro?' } %>
+                        <% end %> 
+                     </div>
+                </div>
+            </div> 
+
+            <% end %>
+            
+        </div>
+    </div>
+</section>
+

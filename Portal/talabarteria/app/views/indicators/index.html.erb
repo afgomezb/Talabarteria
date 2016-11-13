@@ -1,0 +1,38 @@
+<div class="row titulo">
+  <h1>Indicadores</h1>
+</div>
+<div class="row large-padding">
+  <% if user_signed_in? %>
+    <%= link_to 'Nuevo Indicador', new_indicator_path %>
+  <%end%>
+</div>
+<div class="row">
+  <% @indicators.each do |indicator| %>
+  <div class="cuadro col-sm-12" style="width: 80%;margin: 0 auto;"">
+    <div class="field center-xs">
+      <%= image_tag indicator.image.url(:thumb) %>
+    </div>
+    <div class="field center-xs">
+       <%= indicator.description %>
+    </div>
+    <div class="field center-xs">
+        <div class="btn be-red white">
+          <%= link_to 'Ver', indicator %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="btn be-red">
+             <%= link_to 'Eliminar', indicator, method: :delete, data: { confirm: '¿Estás Seguro?' } %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+        
+
+
+
+
+
+

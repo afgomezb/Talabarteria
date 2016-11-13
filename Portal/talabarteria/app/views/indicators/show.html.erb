@@ -1,0 +1,46 @@
+<div class="row">
+	<p id="notice"><%= notice %></p>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p>
+		  <strong>Beneficiario:</strong>
+		  <%= @indicator.beneficiary %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p>
+		  <strong>Impacto:</strong>
+		  <%= @indicator.impact %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p>
+	  <strong>Descripción:</strong>
+	  <%= @indicator.description %>
+	</p>
+	</div>
+</div>
+<div class="row">
+  <div class="field center-xs">
+    <%= image_tag @indicator.image.url(:mini) %>
+  </div>
+</div> 
+<div class="row">
+  <div class="field center-xs">
+  <% if user_signed_in? %>
+	<%= link_to 'Editar', edit_indicator_path(@indicator), class: "btn btn-primary btn-xl page-scroll" %> |
+	<% end %>
+	<%= link_to 'Atras', root_path, class: "btn btn-primary btn-xl page-scroll" %>
+  </div>
+ </div>
+
+
+
+
+
+

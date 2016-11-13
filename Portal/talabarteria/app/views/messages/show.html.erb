@@ -1,0 +1,42 @@
+<div class="row">
+	<h1>Detalles del Mensaje</h1>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p id="notice"><%= notice %></p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="field center-xs">
+		<p>
+		  <strong>Name:</strong>
+		  <%= @message.name %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p>
+		  <strong>Email:</strong>
+		  <%= @message.email %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="field center-xs">
+		<p>
+		  <strong>Menssage:</strong>
+		  <%= @message.menssage %>
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="field center-xs">
+	 <% if user_signed_in? %>
+	 	<%= link_to 'Atras', messages_path, class: "btn btn-primary btn-xl page-scroll" %>
+	 	<% else %>
+		<%= link_to 'Atras', root_path, class: "btn btn-primary btn-xl page-scroll" %>
+		<% end %>
+	</div>
+</div>

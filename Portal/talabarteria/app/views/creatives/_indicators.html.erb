@@ -1,0 +1,47 @@
+<section id="indicators">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Indicadores de Responsabilidad</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <p>
+                       Los Indicadores de Responsabilidad, son una herramienta de aprendizaje y evaluación de la gestión de la Talabartería en lo que se refiere a la incorporación de prácticas de responsabilidad social empresarial, a la planificación de estrategias y el monitoreo del desempeño general de la empresa. Se trata de un instrumento de autoevaluación y aprendizaje de uso esencialmente interno. 
+                    </p>
+                </div>
+            </div>
+    </div>
+    <% if user_signed_in? %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <%= link_to 'Nuevo Indicador', new_indicator_path, class: "btn btn-primary btn-xl page-scroll" %>
+                </div>
+            </div>
+        </div>
+    <%end%>
+    <% @indicators.each do |indicator| %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    
+                    <h3><%= indicator.beneficiary %></h3>
+                        <%= image_tag indicator.image.url(:mini) %>
+                    <p class="text-muted">
+                        <%= indicator.description %>
+                    </p>
+                      <%= link_to 'Ver', indicator, class: "btn btn-primary btn-xl page-scroll" %>
+                    <% if user_signed_in? %>
+                         <%= link_to 'Eliminar', indicator, method: :delete, class: "btn btn-primary btn-xl page-scroll",data: { confirm: '¿Estás Seguro?' } %>
+                    <% end %> 
+                </div>
+            </div>
+        </div>
+    <% end %>  
+</section>
+

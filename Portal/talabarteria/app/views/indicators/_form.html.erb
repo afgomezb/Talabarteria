@@ -1,0 +1,44 @@
+<div style="width: 80%;margin: 0 auto;">
+<%= form_for(indicator) do |f| %>
+  <% if indicator.errors.any? %>
+    <div class="field">
+      <h2>Error</h2>
+
+      <ul>
+      <% indicator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :beneficiary, placeholder: "Beneficiario", class: "forma" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :impact, placeholder: "Impacto" , class: "forma"%>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :description, placeholder: "Escriba aqui una descripción", style:"height:180px", class: "forma" %>
+  </div>
+
+  <div class="field">
+      <table>
+        <tr>
+          <td>
+            <%= f.label 'Imagen: ', style: "padding-right: 15px;" %>
+          </td>
+          <td>
+            <%= f.file_field :image %>
+          </td>
+        </tr>
+      </table>
+    </div>  
+
+  <div class="actions center-xs">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

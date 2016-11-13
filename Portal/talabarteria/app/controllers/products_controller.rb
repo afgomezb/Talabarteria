@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :validate_user, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index]
+  
   # GET /products
   # GET /products.json
   def index
@@ -56,7 +57,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +75,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :description, :warranty, :type_leather)
+      params.require(:product).permit(:name, :price, :description, :warranty, :type_leather, :cover, :photo1, :photo2) 
     end
 end
